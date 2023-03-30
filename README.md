@@ -17,7 +17,9 @@ We Are Using
 TEXT = text
 SIZE = 1
 ROTATION = 0
-MODE = "file" #toget the file directly
+MODE = "return"
+you can use file in mode to get the file directly, i am writing the output in file. 
+
 FEEDRATE = 1
 
 ON: "M300 S50.00"
