@@ -10,7 +10,8 @@ def speechtotext():
               audio= r.listen(source)
               text= r.recognize_google(audio,language="en-IN", show_all = False)
               print(text)
-              gcode = ttg(text,1,0,"return",1).toGcode("M300 S50.00","M300 S30.00","G0","G1")
+              
+              gcode = ttg(text,1,0,"return",1).toGcode("M300 S30","M300 S50","G1","G0")
               f= open('text.gcode','w')
             
               for i in gcode:
@@ -18,11 +19,12 @@ def speechtotext():
                 f.write('\n')
               f.close()
               
-        except sr.RequestError as e:
+        except:
          print("error")
 
         
         
 if __name__=='__main__':
     speechtotext()
+
 
